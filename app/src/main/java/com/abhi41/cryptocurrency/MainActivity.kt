@@ -7,8 +7,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import com.abhi41.cryptocurrency.presentation.ui.theme.CryptocurrencyTheme
+import androidx.navigation.compose.rememberNavController
+import com.abhi41.cryptocurrency.presentation.NavGraphs
+import com.abhi41.cryptocurrency.ui.theme.CryptocurrencyTheme
+import com.ramcosta.composedestinations.DestinationsNavHost
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +24,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-
+                    DestinationsNavHost(
+                        navGraph = NavGraphs.root,
+                        navController = rememberNavController()
+                    )
                 }
             }
         }

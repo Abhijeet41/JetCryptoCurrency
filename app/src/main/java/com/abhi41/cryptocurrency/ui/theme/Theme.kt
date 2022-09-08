@@ -1,4 +1,4 @@
-package com.abhi41.cryptocurrency.presentation.ui.theme
+package com.abhi41.cryptocurrency.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
